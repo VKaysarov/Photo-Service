@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Module 3</title>
+</head>
+<body>
+	<div id="app">
+		<h2>Загрузите фото:</h2>
+		<form enctype="multipart/form-data">
+			<input type="file" @change='check_img($event)'>
+			<button type="button" @click='upload_img'>Загрузить</button>
+		</form>
+		<ul>
+			<li v-for="i in data">
+				<img :src="i" alt="" width="300px">
+				<input type="checkbox" :value="i" v-model="checked">
+			</li>
+			<span>Выбрано: {{ checked }}</span>
+		</ul>
+	</div>
+
+
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script>
+		let app = new Vue({
+			el: '#app',
+			data: {
+				image: '',
+				data: [],
+				checked: []
+			},
+			methods: {
+				check_img: function(event) {
+					let data = new FormData();
+				    data.append('name', 'my-picture');
+					data.append('file', event.target.files[0]);
+					this.image = data;
+					console.log(data.get('file'));
+					// this.image = event.target.files[0];
+				},
+				upload_img: function() {
+					fetch('http://localhost/Module3/upload/', {
+						method: 'POST',
+						body: this.image 
+					}).then(response => {
+						return response.json()
+					}).then(data => {
+						console.log(data)
+						let last_element = data.length - 1
+						console.log(last_element + ' last_element')
+						let path_img = 'photos/' + data[last_element]
+						console.log(path_img)
+						this.data.push(path_img)
+					})
+				}
+			},
+			created: function () {
+				fetch('http://localhost/Module3/upload/').then(response => {
+					return response.json()
+				}).then(data => {
+					for (var i = 2; i < data.length; i++) {
+						let path_img = 'photos/' + data[i]
+						this.data.push(path_img)
+					}
+					console.log(this.data)
+				})
+			}
+		
+		})
+	</script>
+
+</body>
+</html>
