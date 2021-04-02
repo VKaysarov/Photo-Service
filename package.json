@@ -1,6 +1,7 @@
 {
   "name": "vue-photo-service",
   "version": "0.1.0",
+  "homepage": "./",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -14,7 +15,10 @@
     "uuid": "^8.3.0",
     "vue": "^2.6.11",
     "vue-router": "^3.3.4",
-    "vue2-dropzone": "^3.6.0"
+    "vue2-dropzone": "^3.6.0",
+    "core-js": "^3.6.5",
+    "vue": "^2.6.11",
+    "vue-router": "^3.3.4"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.4.0",
@@ -39,7 +43,8 @@
     },
     "rules": {
       "no-unused-vars": ["error", { "vars": "local", "args": "after-used", "ignoreRestSiblings": false }]
-    }
+    },
+    "rules": {}
   },
   "browserslist": [
     "> 1%",

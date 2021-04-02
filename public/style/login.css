@@ -3,7 +3,25 @@ form {
   -ms-flex-item-align: center;
   align-self: center;
   width: 80%;
+  max-width: 550px;
   border-radius: 30px;
+  padding: 55px 85px;
+  box-shadow: 0 0 10px 0 #6200EE;
+}
+
+form h1 {
+  margin-bottom: 50px;
+}
+
+form input {
+  padding: 10px 14px; 
+
+}
+
+button {
+  color: #fff;
+  background-color: #6200EE;
+  cursor: pointer;
 }
 
 form div {
@@ -12,6 +30,11 @@ form div {
 
 form div, form div input {
   width: 100%;
+}
+
+form > div  {
+  margin: 32px 0;
+  position: relative;
 }
 
 form > div:last-child {
@@ -31,7 +54,8 @@ form div a {
 }
 
 form input[type=checkbox] {
-  width: 5%; }
+  width: 5%;
+}
 
 .input-icon {
   position: absolute;
@@ -43,25 +67,6 @@ form input[type=checkbox] {
   display: flex;
   justify-content: center;
   margin-top: 50px;
-}
-
-form {
-  width: 550px;
-  padding: 55px 85px;
-  box-shadow: 0 0 10px 0 #6200EE;
-}
-
-form h1 {
-  margin-bottom: 50px;
-}
-
-form > div  {
-  margin: 32px 0;
-  position: relative;
-}
-
-form input {
-  padding: 10px 14px; 
 }
 
 .label {
@@ -94,4 +99,22 @@ form input {
 
 .has-error .message {
   max-height: 100%;
+}
+
+  form div:last-child {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center; }
+  form input[type=checkbox] {
+    width: 5%; }
+
+
+@media (max-width: 555px) {
+  form {
+    width: 100%;
+    padding: 55px 25px;
+  }
 }

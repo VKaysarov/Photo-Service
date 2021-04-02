@@ -1,5 +1,27 @@
+ul {
+  list-style-type: none;
+}
+
 body {
   overflow-x: hidden;
+  display: grid;
+  /*grid-template-rows: 1fr 10fr 1fr;*/
+  grid-template-rows: 5% 95%;
+}
+
+button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+}
+
+button a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.dropzone input {
+  display: none;
 }
 
 .subtitle {
@@ -9,14 +31,14 @@ body {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  -ms-flex-item-align: center;
-  align-self: center;
-  padding-bottom: 10px;
-  margin-bottom: 50px;
+  align-items: center;
+  margin: 50px 0;
   border-bottom: 1px solid;
 }
-  .subtitle .select-all {
-    display: grid; }
+
+.subtitle .select-all {
+  display: grid;
+}
     .subtitle .select-all a {
       -ms-flex-item-align: end;
       align-self: end;
@@ -98,6 +120,7 @@ body {
       -webkit-transform: scale(0);
       transform: scale(0);
       border-radius: 50%; }
+
       
 .card-footer {
   display: -webkit-box;
@@ -119,16 +142,37 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+    .cards .card .card-footer {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+      padding: 15px; }
+      .cards .card .card-footer img {
+        margin-left: 12px; }
+
 
 .pagination {
-  justify-self: center;
+  position: absolute;
+  left: 0;
+  bottom: 40px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
   -ms-flex-item-align: end;
   align-self: end;
-  padding-bottom: 40px; }
-  .pagination a {
-    text-decoration: none; }
-  .pagination .pagination-current {
-    color: #6200EE; }
+}
+
+.pagination a {
+  text-decoration: none;
+  margin-left: 15px;
+}
+
+.pagination .pagination-current {
+  color: #6200EE;
+}
 
 .action-bar {
   position: absolute;
@@ -158,6 +202,11 @@ body {
 .action-bar.active {
   -webkit-transform: translateX(50%);
   transform: translateX(50%);
+}
+
+.action-bar svg:hover path {
+  transition-duration: .2s;
+  fill: #6200EE;
 }
 
 @media (max-width: 1440px) {

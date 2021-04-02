@@ -1,5 +1,5 @@
 <template>
-	<main>
+	<main class="container">
 		<div class="wrapper-form">
 			<form action="#">
 				<h1>Регистрация</h1>
@@ -39,8 +39,10 @@
 					<div class="message">{{password.error.message}}</div>
 				</div>
 				<div>
-					<input type="checkbox">
-					<label>Нажимая зарегистрироваться вы принимаете <a href="#">пользовательское соглашение</a></label>
+					<label>
+						<input type="checkbox">
+						Нажимая зарегистрироваться вы принимаете <a href="#">пользовательское соглашение</a>
+					</label>
 				</div>
 				<div>
 					<button @click.prevent="signup">Зарегистрироваться</button>
@@ -137,3 +139,4 @@
 		},
 	}
 </script>
+

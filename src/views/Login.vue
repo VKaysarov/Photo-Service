@@ -1,5 +1,5 @@
 <template>
-	<main>
+	<main class="container">
 		<div class="wrapper-form">
 			<form action="#">
 				<h1>Авторизация</h1>
@@ -95,6 +95,8 @@
 				// }).then(function(response) {
 				// 		return response.text();
 				// 	})
+				// fetch("http://localhost/ps/api/signup", {
+
 			}
 		}
 	}
